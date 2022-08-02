@@ -1,0 +1,114 @@
+.minesweeper-container{
+    width: 400px;
+    height: 510px;
+    border: solid thick white;
+    margin-top: 10%;
+}
+
+h1{
+    margin-top: 10%;
+    position: relative;
+    left:100px;
+    color: white;
+    font-size: 40px;   
+}
+.flagsLeft{
+    color: white;
+}
+.board{
+    width: 401px;
+    height: 410px;
+    border: solid thin grey;
+    border-bottom: none;
+    border-right: none;
+    background-color: #9F84BD;
+}
+
+.board-top{
+    width: 401px;
+    display: flex;
+    flex-direction: row;
+    height: 99px;
+    justify-content: space-around;
+    background-color: #C09BD8;
+    border-bottom: solid white;
+}
+body{
+    background-color: #820B8A;
+    margin: 0 auto;
+    width: 30%;
+}
+
+/*I removed the left and right borders of the each row so that they dont stack up with the container's border*/
+.row{
+    border: solid 1px grey;
+    height: 39px;
+    width: 401px;
+    border-left: none;
+    border-right: none;
+}
+/*style for the buttons in the top of the board
+I nested the classes because when I didnt it started to overlap the board*/
+.board-top .play-again, .board-top .help {
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 30px
+}
+.play-again, .help{
+    border-radius: 5px;
+    background-color: #9F84BD;
+    border: solid 3px white;
+    color: white;
+}
+.play-again:hover, .help:hover{
+    background-color: white;
+    border: solid 3px #9F84BD;
+    color: #9F84BD;
+}
+.board-top .flagsLeft{
+    position: relative;
+    top: 30px
+}
+/*I played around with css here to get the board
+some pixel values are smaller to make up for the 1px border
+for the cells I used float to get them spaced out into the rows*/
+.board .row .cell{
+    width: 39px;
+    height: 39px;
+    float:left;
+    border-right: solid 1px grey;
+    border-radius: 5px;
+}
+
+/*background colors for cells and when they are hovered on*/
+.board .row .cell:last-child{
+    border-right: none;
+}
+.open {
+    background-color: white;
+}
+
+.board .row .cell:hover{
+    background-color:#C09BD8;
+}
+
+.board .row .open:hover{
+    background-color: white;
+}
+
+/*styling for what shows in an open cell (numbers and flags)
+centering them in the cell and change color to match the color scheme*/
+.count{
+    color: #820B8A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flagIcon{
+    color: #820B8A;
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
